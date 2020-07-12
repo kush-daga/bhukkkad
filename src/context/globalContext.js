@@ -23,14 +23,15 @@ const globalReducer = (state, action) => {
 }
 
 export const GlobalProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(globalReducer, {
+  const defaultState = {
     currentTheme:
       window.localStorage.getItem("theme") == null
         ? "dark"
         : window.localStorage.getItem("theme"),
     cursorType: false,
     cursorStyles: ["pointer", "hovered"],
-  })
+  }
+  const [state, dispatch] = useReducer(globalReducer, defaultState)
   return (
     <GlobalDispatchContext.Provider value={dispatch}>
       <GlobalStateContext.Provider value={state}>
@@ -42,5 +43,10 @@ export const GlobalProvider = ({ children }) => {
 
 //Custom hooks to use dispatch and state
 
-export const useGlobalStateContext = () => useContext(GlobalStateContext)
+export const useGlobalStateContext = () =>
+  useContext(GlobalStateContext) || {
+    currentTheme: "dark",
+    cursorType: false,
+    cursorStyles: ["pointer", "hovered"],
+  }
 export const useGlobalDispatchContext = () => useContext(GlobalDispatchContext)
