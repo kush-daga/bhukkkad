@@ -22,7 +22,7 @@ export const Container = styled.div`
     css`
       padding: 0;
       margin: 0;
-      max-width: 100%;
+      max-width: 100% !important;
     `}
 `
 export const Flex = styled.div`
