@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { motion } from "framer-motion"
 
 //banner
-export const Banner = styled.div`
+export const Banner = styled(motion.div)`
   background: ${props => props.theme.background};
   height: 100vh;
   width: 100%;
@@ -16,15 +16,8 @@ export const Video = styled.div`
     object-fit: cover;
   }
 `
-export const Canvas = styled.canvas`
-  position: absolute;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: block;
-`
 
-export const BannerTitle = styled.h1`
+export const BannerTitle = styled(motion.h1)`
   position: absolute;
   bottom: -80px;
   left: -15px;
@@ -32,9 +25,9 @@ export const BannerTitle = styled.h1`
   pointer-events: none;
 `
 
-export const Headline = styled.span`
+export const Headline = styled(motion.span)`
   display: block;
-  font-size: 13rem;
+  font-size: 18rem;
   font-weight: 900;
-  line-height: 0.85;
+  line-height: 0.79;
 `
