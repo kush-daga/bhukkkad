@@ -69,7 +69,11 @@ const HomeBanner = () => {
           src={require("../../assets/video/video.mp4")}
         ></video>
       </Video>
-      <Canvas ref={canvas} width={size.width} height={size.height} />
+      <Canvas
+        ref={canvas}
+        width={size ? size.width : "100%"}
+        height={size ? size.height : "100%"}
+      />
       <BannerTitle>
         <Headline>FUN</Headline>
         <Headline>DELIGHT</Headline>
