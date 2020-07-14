@@ -65,7 +65,7 @@ const HomeBanner = () => {
           height="100%"
           width="100%"
           loop
-          autoPlay
+          autoPlay={true}
           src={require("../../assets/video/video.mp4")}
         ></video>
       </Video>

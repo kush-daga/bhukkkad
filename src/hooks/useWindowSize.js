@@ -7,6 +7,11 @@ export default function useWindowSize() {
         width: window.innerWidth,
         height: window.innerHeight,
       }
+    } else {
+      return {
+        width: "1920px",
+        height: "1080px",
+      }
     }
   }
 
