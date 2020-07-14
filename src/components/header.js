@@ -31,7 +31,6 @@ const Header = ({ onCursor }) => {
       transition={{ duration: 1, ease: [0.6, 0.05, -0.01, 0.9] }}
     >
       <Container>
-        {console.log(currentTheme)}
         <Flex spaceBetween noHeight>
           <Logo
             onMouseEnter={() => onCursor("hovered")}
